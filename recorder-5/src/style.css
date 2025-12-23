@@ -23,12 +23,12 @@ body {
   padding-top: 10px;
 }
 
-.section-waveform {
+.waveform-row {
   border-top: none;
   padding-top: 0;
 }
 
-.section-row {
+.rec-row {
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -42,7 +42,7 @@ body {
   gap: 6px;
 }
 
-/* Bottoni base */
+/* Standard Buttons */
 button {
   background: #2563eb;
   border: none;
@@ -62,7 +62,7 @@ button:disabled {
   opacity: 0.8;
 }
 
-/* Rec / Stop design */
+/* Rec/Stop Buttons */
 .btn-round-rec {
   width: 30px;
   height: 30px;
@@ -146,7 +146,7 @@ button:disabled {
   opacity: 0.8;
 }
 
-/* Preset */
+/* Presets */
 .preset-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -161,7 +161,7 @@ button:disabled {
   padding: 8px 0;
 }
 
-/* Download centrati */
+/* Download Buttons */
 .download-row {
   display: flex;
   justify-content: center;
@@ -171,7 +171,7 @@ button:disabled {
   min-width: 160px;
 }
 
-/* Waveform */
+/* Waveform Canva */
 canvas#waveform {
   width: 100%;
   background: #000;
