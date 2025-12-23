@@ -51,15 +51,15 @@ const knobsConfig = [
 const presetsConfig = {
   clean: {
     label: "Clean",
-    params: { gain: 1, lowpass: 20000, highpass: 10, delayTime: 0,    reverbMix: 0.1, pitch: 1 }
+    params: { gain: 1, lowpass: 20000, highpass: 10, delayTime: 0, reverbMix: 0.1, pitch: 1 }
   },
   phone: {
     label: "Phone",
-    params: { gain: 1, lowpass: 3500,  highpass: 400, delayTime: 0,    reverbMix: 0.0, pitch: 1 }
+    params: { gain: 1, lowpass: 3500,  highpass: 400, delayTime: 0, reverbMix: 0.0, pitch: 1 }
   },
   hall: {
     label: "Hall",
-    params: { gain: 1, lowpass: 18000, highpass: 80,  delayTime: 0.25, reverbMix: 0.7, pitch: 1 }
+    params: { gain: 1, lowpass: 18000, highpass: 80, delayTime: 0.25, reverbMix: 0.7, pitch: 1 }
   },
   lofi: {
     label: "Lo‑Fi",
