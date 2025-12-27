@@ -296,7 +296,7 @@ btnStartRec.addEventListener("click", async () => {
       btnPlayProcessed.disabled = false;
       btnDownloadWav.disabled = false;
       btnDownloadProcessedWav.disabled = false;
-      statusEl.textContent = "The Record Is Ready";
+      statusEl.textContent = "The Recording Is Ready";
     };
 
     mediaRecorder.start();
@@ -394,11 +394,7 @@ btnDownloadProcessedWav.addEventListener("click", async () => {
   probeCtx.close();
 
   const length = Math.ceil(duration * sampleRate);
-  const offlineCtx = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(
-    1,
-    length,
-    sampleRate
-  );
+  const offlineCtx = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(1, length, sampleRate);
 
   const source = offlineCtx.createBufferSource();
   source.buffer = decoded;
@@ -449,7 +445,7 @@ btnDownloadProcessedWav.addEventListener("click", async () => {
   const wavBlob = new Blob([wavBuffer], { type: "audio/wav" });
 
   downloadBlob(wavBlob, "Recording_with_effects.wav");
-  statusEl.textContent = "WAV with Effects Is Ready";
+  statusEl.textContent = "The Recording with Effects Is Ready";
 });
 
 // ======================================================================
