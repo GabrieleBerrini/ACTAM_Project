@@ -537,29 +537,28 @@ knobElems.forEach(knob => {
 // Application of the presets
 function applyPreset(name) {
   initAudioGraph();
+
   const preset = presetsConfig[name];
   if (!preset) return;
+
   const p = preset.params;
 
-  const set = (id, val) => {
+  const knobs = document.querySelectorAll(".knob");
+
+  knobs.forEach(k => {
+    const id = k.dataset.target;
+    if (!(id in p)) return;
+
+    const val = p[id];
+
     paramValues[id] = val;
     updateParam(id, val);
     updateValLabel(id, val);
 
-    const k = document.querySelector(`.knob[data-target="${id}"]`);
-    if (k) {
-      const min = +k.dataset.min;
-      const max = +k.dataset.max;
-      k.style.transform = `rotate(${valueToAngle(val, min, max)}deg)`;
-    }
-  };
-
-  set("gain", p.gain);
-  set("lowpass", p.lowpass);
-  set("highpass", p.highpass);
-  set("delayTime", p.delayTime);
-  set("reverbMix", p.reverbMix);
-  set("pitch", p.pitch);
+    const min = +k.dataset.min;
+    const max = +k.dataset.max;
+    k.style.transform = `rotate(${valueToAngle(val, min, max)}deg)`;
+  });
 }
 
 // Stop waveform animation before leaving the page
